@@ -34,7 +34,7 @@ export const createMovie = async (req: Request, res: Response) => {
 
     const { title, releaseDate, userScore, description, image, trailer, director, duration } = req.body;
 
-    const userId = (req as any)?.user?.id;  
+    const userId = (req as any).user.id;  
 
     const movie = await Movie.create({ title, releaseDate, userScore, description, image, trailer, director, duration, userId });
     res.status(201).json(movie);
